@@ -12,3 +12,5 @@ Users: registerUser, loginUser, currentUser
 With Contacts: protected paths tied to UserId:
 
 Contacts: getContacts, getContact, createContact, updateContact, deleteContact
+
+Creating Client Side to make this a Full Stack Contacts app.
