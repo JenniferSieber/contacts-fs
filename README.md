@@ -1,6 +1,12 @@
 # Contacts App
 
-full stack contacts app with user authentication
+full stack contacts api with user authentication with Node.js connected to MongoDB.
 npm init
 
-Node.js - Express - MongoDB
+Express - Mongoose - Bcrypt - -Json Web Token - Express-async-handler - Dotenv - Nodemon
+
+Users: registerUser, loginUser, currentUser
+
+With Contacts: protected paths tied to UserId:
+
+Contacts: getContacts, getContact, createContact, updateContact, deleteContact
