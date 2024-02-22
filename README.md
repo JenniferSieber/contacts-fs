@@ -10,4 +10,5 @@ Express - Mongoose - Bcrypt - Json Web Token - Express-async-handler - Dotenv - 
 Users: registerUser, loginUser, currentUser
 
 With Contacts: protected paths tied to UserId:
+
 Contacts: getContacts, getContact, createContact, updateContact, deleteContact
