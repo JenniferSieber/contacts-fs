@@ -1,5 +1,5 @@
 # Contacts App
-
+# Server Side:
 Node.js Contacts API with user authentication connected to MongoDB.
 
 npm init
@@ -13,4 +13,4 @@ With Contacts: protected paths tied to UserId:
 
 Contacts: getContacts, getContact, createContact, updateContact, deleteContact
 
-Creating Client Side to make this a Full Stack Contacts app.
+# Creating Client Side to make this a Full Stack Contacts app.
