@@ -3,7 +3,7 @@ require("dotenv").config();
 
 const connectDB = async () => {
   try {
-    const connect = await mongoose.connect(process.env.DB_STRING);
+    const connect = await mongoose.connect(process.env.DB_CONNECTION);
     console.log(
       `Database Connected: 
       host: ${connect.connection.host} 
