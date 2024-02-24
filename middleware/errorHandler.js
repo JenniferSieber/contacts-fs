@@ -1,52 +1,25 @@
-const { constants } = require("../constants");
+// I re-factored code to remove switch case and simplify code plus, brought the file of constants into the error handler for now.
+const constants = {
+  VALIDATION_ERROR: 400,
+  UNAUTHORIZED: 401,
+  FORBIDDEN: 403,
+  NOT_FOUND: 404,
+  SERVER_ERROR: 500,
+};
+
+const errorTitles = {
+  [constants.VALIDATION_ERROR]: "Validation Error",
+  [constants.NOT_FOUND]: "Not Found",
+  [constants.UNAUTHORIZED]: "Unauthorized",
+  [constants.FORBIDDEN]: "Forbidden",
+  [constants.SERVER_ERROR]: "Server Error",
+};
 
 const errorHandler = (err, req, res, next) => {
   const statusCode = res.statusCode ? res.statusCode : 500;
+  const title = errorTitles[statusCode] || "Unknown Error";
 
-  switch (statusCode) {
-    case constants.VALIDATION_ERROR:
-      res.json({
-        title: "Validation Error",
-        message: err.message,
-        stackTrace: err.stack,
-      });
-      break;
-
-    case constants.NOT_FOUND:
-      res.json({
-        title: "Not Found",
-        message: err.message,
-        stackTrace: err.stack,
-      });
-      // break;
-
-    case constants.UNAUTHORIZED:
-      res.json({
-        title: "Unauthorized",
-        message: err.message,
-        stackTrace: err.stack,
-      });
-      // break;
-
-    case constants.FORBIDDEN:
-      res.json({
-        title: "Forbidden",
-        message: err.message,
-        stackTrace: err.stack,
-      });
-      // break;
-
-    case constants.SERVER_ERROR:
-      res.json({
-        title: "Server Error",
-        message: err.message,
-        stackTrace: err.stack,
-      });
-      // break;
-
-    default: 
-      console.log("Processing without exceptions.");
-      break;
-  }
+  res.json({ title, message: err.message, stackTrace: err.stack });
 };
+
 module.exports = errorHandler;
